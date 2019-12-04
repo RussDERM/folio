@@ -1,8 +1,8 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { HelmetDatoCms } from 'gatsby-source-datocms'
-import Img from 'gatsby-image'
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby";
+import { HelmetDatoCms } from "gatsby-source-datocms";
+import Img from "gatsby-image";
+import Layout from "../components/layout";
 
 const About = ({ data: { about } }) => (
   <Layout>
@@ -13,19 +13,20 @@ const About = ({ data: { about } }) => (
         <p className="sheet__lead">{about.subtitle}</p>
         <div className="sheet__gallery">
           <Img fluid={about.photo.fluid} />
+          <Img fluid={about.photo.fluid} />
         </div>
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
-            __html: about.bioNode.childMarkdownRemark.html,
+            __html: about.bioNode.childMarkdownRemark.html
           }}
         />
       </div>
     </article>
   </Layout>
-)
+);
 
-export default About
+export default About;
 
 export const query = graphql`
   query AboutQuery {
@@ -47,4 +48,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
